@@ -18,3 +18,16 @@ const c = parseInput("077");
 
 const e = parseInput("101010", 2);
 const f = parseInput("777", 8);
+
+
+
+interface Book {
+    isbn: string;
+    title: string;
+    author: string;
+    pages: number;
+    inStockCount: number;
+}
+
+type BookCatalogItem = Omit<Book, "inStockCount">;
+type LibraryCatalog = Record<string, BookCatalogItem>;
